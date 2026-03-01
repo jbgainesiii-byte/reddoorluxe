@@ -95,6 +95,14 @@ body { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.1rem; bac
 
 /* TENANT PAGE */
 .tenant-page { display: none; }
+.tenant-page.active {
+  display: block;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 200;
+  overflow-y: auto;
+  background: var(--pastel-beige);
+}
 .tenant-page.active { display: block; }
 .directory-page.hidden { display: none; }
 
@@ -1454,18 +1462,24 @@ body { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.1rem; bac
 .dir-hero-inner { position: relative; z-index: 1; }
 .dir-hero h1 {
   font-family: 'Cinzel', serif;
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 600;
   color: var(--white);
-  margin-bottom: 16px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
   letter-spacing: 0.02em;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  animation: fadeInUp 0.8s ease-out 0.15s both;
 }
 .dir-hero h1 em {
   font-family: 'Great Vibes', cursive;
   font-weight: 400;
   font-style: normal;
   color: var(--ceramic-yellow);
-  font-size: 1.2em;
+  letter-spacing: 0.05em;
+  font-size: 1.15em;
 }
 .dir-hero p {
   font-family: 'Cormorant Garamond', Georgia, serif;
@@ -1479,17 +1493,19 @@ body { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.1rem; bac
 /* Back link in header */
 .dir-back-link {
   font-family: 'Cinzel', serif;
-  font-size: 0.58rem;
-  letter-spacing: 0.1em;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.7);
+  color: var(--ceramic-yellow);
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 6px;
   transition: color 0.2s;
+  opacity: 1;
+  font-weight: 600;
 }
-.dir-back-link:hover { color: var(--ceramic-yellow); }
+.dir-back-link:hover { color: var(--white); }
 
 @media(max-width: 768px) {
   .lead-section { padding: 60px 20px 80px; }
@@ -2304,18 +2320,18 @@ function filterPros(category, btn) {
 
 // ── Show tenant profile ──────────────────────────────────────
 function showTenant(name) {
-  document.getElementById('directory-page').style.display = 'none';
   document.querySelectorAll('.tenant-page').forEach(p => p.classList.remove('active'));
   const el = document.getElementById('tenant-' + name);
-  if (el) el.classList.add('active');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (el) {
+    el.classList.add('active');
+    el.scrollTop = 0;
+  }
   setTimeout(() => buildCrossLinks(name), 50);
 }
 
 // ── Return to directory ──────────────────────────────────────
 function showDirectory() {
   document.querySelectorAll('.tenant-page').forEach(p => p.classList.remove('active'));
-  document.getElementById('directory-page').style.display = 'block';
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
