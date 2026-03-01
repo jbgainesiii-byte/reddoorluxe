@@ -248,6 +248,505 @@ body { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.1rem; bac
 .page-section { display: none; }
 .page-section.active { display: block; }
 .header-nav a.nav-active { color: var(--white) !important; }
+
+/* ---- SHARED PAGE HERO ---- */
+.gap-hero, .sol-hero {
+  padding: 160px 40px 100px;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(135deg, #0E0000 0%, #1a0505 50%, #64090C 100%);
+  overflow: hidden;
+}
+.gap-hero::before, .sol-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(248,215,132,0.03) 10px, rgba(248,215,132,0.03) 20px);
+}
+.gap-hero::after, .sol-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--ceramic-yellow), transparent);
+}
+
+/* ---- GAP PAGE ---- */
+.gap-body, .sol-body {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 40px 120px;
+}
+
+/* Eyebrow label */
+.section-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red-carriage);
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: block;
+}
+
+/* Section heading */
+.section-heading {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+  font-weight: 600;
+  color: var(--bordeaux);
+  margin-bottom: 24px;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+
+/* Body prose */
+.prose {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  line-height: 1.85;
+  color: var(--dark-gray);
+  margin-bottom: 20px;
+}
+.prose strong { color: var(--bordeaux); }
+.prose em { font-style: italic; }
+
+/* Page divider */
+.page-divider {
+  border: none;
+  border-top: 1px solid rgba(100,9,12,0.12);
+  margin: 64px 0;
+}
+
+/* ---- SEARCH TERMS TABLE ---- */
+.search-section {
+  margin: 56px 0;
+}
+.search-intro {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--dark-gray);
+  margin-bottom: 36px;
+}
+.search-intro strong { color: var(--bordeaux); }
+
+.search-table-wrap {
+  overflow-x: auto;
+  margin: 0 0 32px;
+}
+.search-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+.search-table thead tr {
+  background: linear-gradient(135deg, var(--bordeaux), var(--mahogany));
+}
+.search-table thead th {
+  font-family: 'Cinzel', serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ceramic-yellow);
+  font-weight: 600;
+  padding: 16px 20px;
+  text-align: left;
+}
+.search-table tbody tr {
+  border-bottom: 1px solid rgba(100,9,12,0.08);
+  transition: background 0.2s;
+}
+.search-table tbody tr:hover {
+  background: rgba(100,9,12,0.03);
+}
+.search-table tbody td {
+  padding: 14px 20px;
+  font-size: 1.05rem;
+  color: var(--dark-gray);
+  line-height: 1.4;
+}
+.search-table tbody td:first-child {
+  font-style: italic;
+  color: var(--bordeaux);
+}
+.search-table tbody td.vol-high {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--red-carriage);
+}
+.search-table tbody td.vol-med {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--mahogany);
+}
+.search-table-note {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--medium-gray);
+  margin-top: 12px;
+}
+
+/* ---- PULL QUOTE ---- */
+.pull-quote {
+  border-left: 4px solid var(--ceramic-yellow);
+  padding: 28px 36px;
+  margin: 40px 0;
+  background: rgba(248,215,132,0.04);
+}
+.pull-quote p {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--bordeaux);
+  line-height: 1.7;
+  margin: 0 0 12px;
+}
+.pull-quote cite {
+  font-family: 'Cinzel', serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--medium-gray);
+  font-style: normal;
+}
+
+/* ---- WHAT TENANTS LOSE ---- */
+.loss-list {
+  margin: 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.loss-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid rgba(100,9,12,0.08);
+}
+.loss-item:first-child {
+  border-top: 1px solid rgba(100,9,12,0.08);
+}
+.loss-cell {
+  padding: 20px 24px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--dark-gray);
+}
+.loss-cell:first-child {
+  border-right: 1px solid rgba(100,9,12,0.08);
+  font-style: italic;
+  color: var(--bordeaux);
+}
+.loss-cell.good {
+  color: var(--dark-gray);
+}
+.loss-cell.good::before {
+  content: '✦ ';
+  color: var(--ceramic-yellow);
+  font-style: normal;
+}
+.loss-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: linear-gradient(135deg, var(--bordeaux), var(--mahogany));
+  margin-bottom: 0;
+}
+.loss-header-cell {
+  padding: 14px 24px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ceramic-yellow);
+  font-weight: 600;
+}
+.loss-header-cell:first-child {
+  border-right: 1px solid rgba(248,215,132,0.15);
+}
+
+/* ---- AI SEARCH BLOCK ---- */
+.ai-block {
+  background: linear-gradient(135deg, #0E0000, #1a0505);
+  padding: 52px 48px;
+  margin: 56px 0;
+  position: relative;
+  overflow: hidden;
+}
+.ai-block::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(248,215,132,0.03) 10px, rgba(248,215,132,0.03) 20px);
+}
+.ai-block-inner { position: relative; z-index: 1; }
+.ai-block .section-eyebrow { color: rgba(248,215,132,0.6); }
+.ai-block .section-heading { color: var(--white); }
+.ai-block .prose { color: rgba(255,255,255,0.72); }
+.ai-block .prose strong { color: var(--ceramic-yellow); }
+.ai-example {
+  background: rgba(248,215,132,0.07);
+  border: 1px solid rgba(248,215,132,0.18);
+  padding: 22px 28px;
+  margin: 24px 0;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--ceramic-yellow);
+}
+
+/* ---- GAP CLOSE CTA ---- */
+.gap-close {
+  text-align: center;
+  padding: 56px 40px;
+  background: var(--pastel-beige);
+  border: 1px solid rgba(100,9,12,0.12);
+  margin-top: 56px;
+}
+.gap-close .section-heading { margin-bottom: 16px; }
+.gap-close .prose { max-width: 600px; margin: 0 auto 32px; }
+.gap-close-btn {
+  display: inline-block;
+  padding: 16px 52px;
+  background: var(--bordeaux);
+  color: var(--ceramic-yellow);
+  border: 2px solid var(--bordeaux);
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.gap-close-btn:hover {
+  background: var(--red-carriage);
+  border-color: var(--red-carriage);
+}
+
+/* ---- SOLUTION PAGE ---- */
+.sol-intro-block {
+  max-width: 760px;
+  margin: 0 auto 72px;
+  text-align: center;
+}
+.sol-intro-block .prose {
+  font-size: 1.3rem;
+}
+
+/* What's included — editorial list */
+.included-list {
+  margin: 40px 0 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.included-item {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  border-bottom: 1px solid rgba(100,9,12,0.08);
+  padding: 28px 0;
+  gap: 40px;
+  align-items: start;
+}
+.included-item:first-child { border-top: 1px solid rgba(100,9,12,0.08); }
+.included-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--bordeaux);
+  font-weight: 600;
+  padding-top: 4px;
+}
+.included-desc {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  color: var(--dark-gray);
+  line-height: 1.75;
+}
+.included-desc strong { color: var(--bordeaux); }
+
+/* Tenant benefit — editorial */
+.sol-tenant-block {
+  background: linear-gradient(135deg, var(--bordeaux), var(--mahogany));
+  padding: 64px 56px;
+  margin: 56px 0;
+  position: relative;
+  overflow: hidden;
+}
+.sol-tenant-block::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(248,215,132,0.03) 10px, rgba(248,215,132,0.03) 20px);
+}
+.sol-tenant-block-inner { position: relative; z-index: 1; }
+.sol-tenant-block .section-eyebrow { color: rgba(248,215,132,0.6); }
+.sol-tenant-block .section-heading { color: var(--white); }
+.sol-tenant-block .prose { color: rgba(255,255,255,0.75); }
+.sol-tenant-block .prose strong { color: var(--ceramic-yellow); }
+
+.tenant-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 36px;
+}
+.tenant-point {}
+.tenant-point-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ceramic-yellow);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.tenant-point-desc {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+}
+
+/* How it works — numbered editorial */
+.hiw-list {
+  margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  counter-reset: hiw-counter;
+}
+.hiw-item {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 32px;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(100,9,12,0.08);
+  align-items: start;
+}
+.hiw-item:first-child { border-top: 1px solid rgba(100,9,12,0.08); }
+.hiw-num {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--bordeaux), var(--mahogany));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: var(--ceramic-yellow);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.hiw-content {}
+.hiw-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bordeaux);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.hiw-desc {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  color: var(--dark-gray);
+  line-height: 1.7;
+}
+
+/* The offer block */
+.offer-block {
+  background: linear-gradient(135deg, var(--bordeaux), var(--mahogany));
+  padding: 64px 56px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin: 56px 0;
+}
+.offer-block::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(248,215,132,0.03) 10px, rgba(248,215,132,0.03) 20px);
+}
+.offer-block-inner { position: relative; z-index: 1; }
+.offer-block .section-eyebrow { color: rgba(248,215,132,0.6); }
+.offer-block .section-heading { color: var(--white); }
+.offer-block .section-heading em {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--ceramic-yellow);
+  font-size: 1.2em;
+}
+.offer-block .prose { color: rgba(255,255,255,0.78); max-width: 640px; margin-left: auto; margin-right: auto; }
+.offer-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin: 32px 0;
+}
+.offer-tag {
+  background: rgba(248,215,132,0.1);
+  border: 1px solid rgba(248,215,132,0.28);
+  padding: 10px 22px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ceramic-yellow);
+  font-weight: 600;
+}
+.offer-cta {
+  display: inline-block;
+  padding: 18px 60px;
+  background: var(--ceramic-yellow);
+  color: var(--bordeaux);
+  border: 2px solid var(--ceramic-yellow);
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s;
+  margin-top: 8px;
+}
+.offer-cta:hover {
+  background: transparent;
+  color: var(--ceramic-yellow);
+}
+
+/* Closing editorial */
+.sol-close {
+  margin-top: 56px;
+}
+
+@media(max-width: 900px) {
+  .loss-item { grid-template-columns: 1fr; }
+  .loss-cell:first-child { border-right: none; border-bottom: 1px solid rgba(100,9,12,0.08); }
+  .loss-header { grid-template-columns: 1fr; }
+  .loss-header-cell:first-child { border-right: none; border-bottom: 1px solid rgba(248,215,132,0.15); }
+  .included-item { grid-template-columns: 1fr; gap: 8px; }
+  .tenant-points { grid-template-columns: 1fr; }
+  .sol-tenant-block { padding: 48px 32px; }
+  .offer-block { padding: 48px 32px; }
+}
+@media(max-width: 600px) {
+  .gap-body, .sol-body { padding: 60px 20px 80px; }
+  .gap-hero, .sol-hero { padding: 120px 20px 80px; }
+  .ai-block { padding: 36px 24px; }
+  .hiw-item { grid-template-columns: 48px 1fr; gap: 20px; }
+}
 .gap-hero { padding: 160px 40px 100px; text-align: center; position: relative; background: linear-gradient(135deg, #0E0000 0%, #1a0505 50%, #64090C 100%); overflow: hidden; }
 .gap-hero::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(248,215,132,0.03) 10px, rgba(248,215,132,0.03) 20px); }
 .gap-hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--ceramic-yellow), transparent); }
@@ -475,182 +974,177 @@ body { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.1rem; bac
 
 <div class="gap-body">
 
-  <p class="gap-intro">
-    Right now, thousands of people in Southfield, Oak Park, Lathrup Village, and across Metro Detroit are opening Google and typing exactly what your professionals offer. <strong>Most of them will never find your tenants.</strong> Not because the talent isn't here — but because the digital infrastructure isn't.
-  </p>
+  <!-- OPENING EDITORIAL -->
+  <span class="section-eyebrow">What's Happening Right Now</span>
+  <h2 class="section-heading">Thousands of People in Metro Detroit Are Searching for Your Professionals. Most Will Never Find Them.</h2>
+  <p class="prose">Right now, someone in Southfield is opening Google and typing <em>"natural hair stylist near me."</em> Someone in Oak Park is searching <em>"knotless braids Southfield MI."</em> A client in Lathrup Village is looking for a lash artist who takes new clients. These are not hypothetical searches. They are happening every hour of every day — and they represent real revenue that either flows to your tenants or flows somewhere else.</p>
+  <p class="prose">The professionals who show up in those results are not necessarily the most talented. They are the ones with a digital presence. <strong>The gap between talent and visibility is where clients are lost.</strong></p>
 
-  <!-- STATS GRID -->
-  <div class="stats-grid">
-    <div class="stat-card">
-      <div class="stat-number">97%</div>
-      <div class="stat-label">of consumers search online before choosing a local beauty professional</div>
+  <hr class="page-divider">
+
+  <!-- SEARCH TERMS TABLE -->
+  <div class="search-section">
+    <span class="section-eyebrow">What People Are Actually Typing</span>
+    <h2 class="section-heading">The Searches Happening in Metro Detroit Every Month</h2>
+    <p class="search-intro">The following are real Google search terms used by clients in the Southfield, Oak Park, Lathrup Village, and greater Oakland County area. Each one represents a potential client actively looking for a professional — right now, today. The monthly volume figures are based on comparable mid-size metro markets and reflect searches where <strong>the client has no stylist in mind yet.</strong></p>
+
+    <div class="search-table-wrap">
+      <table class="search-table">
+        <thead>
+          <tr>
+            <th>Search Term</th>
+            <th>Service Category</th>
+            <th>Est. Monthly Searches (Metro Detroit)</th>
+            <th>What It Means</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>"natural hair stylist near me"</td>
+            <td>Hair</td>
+            <td class="vol-high">1,200+</td>
+            <td>High-intent, ready to book</td>
+          </tr>
+          <tr>
+            <td>"knotless braids Southfield MI"</td>
+            <td>Hair / Braids</td>
+            <td class="vol-med">480</td>
+            <td>Geo-specific, very high intent</td>
+          </tr>
+          <tr>
+            <td>"lash extensions near me"</td>
+            <td>Lashes</td>
+            <td class="vol-high">900+</td>
+            <td>Ready to book within 24 hours</td>
+          </tr>
+          <tr>
+            <td>"nail salon Southfield MI"</td>
+            <td>Nails</td>
+            <td class="vol-high">1,400+</td>
+            <td>Highest volume local beauty search</td>
+          </tr>
+          <tr>
+            <td>"silk press near me"</td>
+            <td>Hair</td>
+            <td class="vol-med">390</td>
+            <td>Service-specific, high conversion</td>
+          </tr>
+          <tr>
+            <td>"lash lift and tint near me"</td>
+            <td>Lashes</td>
+            <td class="vol-med">320</td>
+            <td>Specific service, ready to book</td>
+          </tr>
+          <tr>
+            <td>"microblading near me"</td>
+            <td>Brows</td>
+            <td class="vol-med">390</td>
+            <td>High-ticket, high-intent</td>
+          </tr>
+          <tr>
+            <td>"massage near me Southfield"</td>
+            <td>Wellness</td>
+            <td class="vol-high">1,600+</td>
+            <td>Highest overall local search volume</td>
+          </tr>
+          <tr>
+            <td>"tattoo artist near me"</td>
+            <td>Tattoo</td>
+            <td class="vol-med">480</td>
+            <td>Research-phase, high lifetime value</td>
+          </tr>
+          <tr>
+            <td>"hair salon taking new clients"</td>
+            <td>Hair</td>
+            <td class="vol-med">260</td>
+            <td>Actively seeking availability</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="stat-card">
-      <div class="stat-number">83%</div>
-      <div class="stat-label">use Google or Yelp specifically to find salons and stylists</div>
+    <p class="search-table-note">* Volume estimates based on comparable mid-size metro markets (Grand Rapids, MI: 8,080 monthly beauty searches across 62 keywords). Metro Detroit is 4–6x larger. Sources: Avalanche Creative SEO Research, Google Keyword Planner benchmarks.</p>
+
+    <p class="prose" style="margin-top: 32px;">These searches add up to <strong>over 7,000 potential client touchpoints per month</strong> in Metro Detroit alone — clients who are actively looking, have no stylist in mind, and will book whoever appears first. The professionals who have a searchable web presence capture these clients. The ones who only exist on Instagram do not.</p>
+  </div>
+
+  <hr class="page-divider">
+
+  <!-- HOW CLIENTS ACTUALLY SEARCH -->
+  <span class="section-eyebrow">The Client Journey</span>
+  <h2 class="section-heading">How a Client in Southfield Actually Finds a Stylist</h2>
+  <p class="prose">This is not a theory. This is the documented behavior of local beauty consumers in 2025 and 2026. A client needs a new stylist. Here is exactly what they do — and where most independent professionals fall out of the picture entirely.</p>
+
+  <div class="loss-header">
+    <div class="loss-header-cell">Without a Digital Profile</div>
+    <div class="loss-header-cell">With a Red Door Luxe Profile</div>
+  </div>
+  <div class="loss-list">
+    <div class="loss-item">
+      <div class="loss-cell">Client opens Google and types "natural hair stylist Southfield MI." The top 3 results have photos, reviews, and a booking link. The professional with only an Instagram account does not appear.</div>
+      <div class="loss-cell good">The professional's profile page — with their name, specialty, location, and services — is indexed by Google. They appear in local search results alongside established salons.</div>
     </div>
-    <div class="stat-card">
-      <div class="stat-number">88%</div>
-      <div class="stat-label">of mobile local searches result in a contact or visit within 24 hours</div>
+    <div class="loss-item">
+      <div class="loss-cell">Client scrolls Google Maps. Only businesses with a Google Business Profile appear. An independent stylist with no profile is completely absent from the map.</div>
+      <div class="loss-cell good">The directory's structured data and schema markup feeds Google Maps and Google's local pack. The professional gains map visibility without managing their own Google listing.</div>
     </div>
-    <div class="stat-card">
-      <div class="stat-number">71%</div>
-      <div class="stat-label">have decided NOT to book a stylist because it was too hard to find information</div>
+    <div class="loss-item">
+      <div class="loss-cell">Client asks ChatGPT: "Who does knotless braids near Southfield?" AI tools pull from structured web content. A professional with no website cannot be recommended by AI.</div>
+      <div class="loss-cell good">Each profile is written in clear, structured language — name, specialty, location, services. Google AI Overview and ChatGPT can read and recommend these professionals directly.</div>
     </div>
-    <div class="stat-card">
-      <div class="stat-number">42%</div>
-      <div class="stat-label">of clients prefer to self-book online — no call, no DM, just a booking link</div>
+    <div class="loss-item">
+      <div class="loss-cell">Client finds a stylist on Instagram but cannot see pricing, availability, or a way to book without sending a DM. 42% of clients prefer to self-book. They move on.</div>
+      <div class="loss-cell good">Each profile includes a direct booking link, service menu with pricing, and portfolio photos. A client can go from discovery to booked appointment in under 3 minutes.</div>
     </div>
-    <div class="stat-card">
-      <div class="stat-number">22%</div>
-      <div class="stat-label">choose a stylist based specifically on their online portfolio and photos</div>
+    <div class="loss-item">
+      <div class="loss-cell">Client books whoever was easiest to find. The most talented professional in the building — who has no web presence — never had a chance.</div>
+      <div class="loss-cell good">The professional with the strongest profile wins the client. Talent and visibility are finally aligned. The client books. The professional's chair stays full.</div>
     </div>
   </div>
 
-  <!-- HOW CLIENTS SEARCH -->
-  <div class="gap-section">
-    <div class="gap-section-sub">The Search Journey</div>
-    <div class="gap-section-title">How Metro Detroit Clients Actually Find a Stylist</div>
-    <p>This is the real sequence. A client in Southfield needs a new stylist. Here is exactly what happens — and where your professionals fall out of the funnel.</p>
-
-    <div class="search-flow">
-      <div class="flow-step">
-        <div class="flow-icon">🔍</div>
-        <div class="flow-label">Google Search</div>
-        <div class="flow-desc">"natural hair stylist Southfield MI" or "knotless braids near me"</div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-icon">📍</div>
-        <div class="flow-label">Google Maps</div>
-        <div class="flow-desc">Top 3 results with photos, reviews, and hours appear</div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-icon">📸</div>
-        <div class="flow-label">Portfolio Check</div>
-        <div class="flow-desc">Client views photos and reads reviews before deciding</div>
-      </div>
-      <div class="flow-step missing">
-        <div class="flow-icon">❌</div>
-        <div class="flow-label">Missing: Profile</div>
-        <div class="flow-desc">No website, no Google profile — stylist is invisible here</div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-icon">📅</div>
-        <div class="flow-label">Booking</div>
-        <div class="flow-desc">Client books directly — whoever is easiest to find wins</div>
-      </div>
-    </div>
-
-    <p>The client never reaches out on Instagram. They never ask a friend. They search, they scroll, they book — all within 10 minutes. <strong>If your professionals aren't in that search result, they don't exist to that client.</strong></p>
-  </div>
+  <hr class="page-divider">
 
   <!-- WHAT TENANTS ARE SAYING -->
-  <div class="gap-section">
-    <div class="gap-section-sub">The Real Problem</div>
-    <div class="gap-section-title">What Independent Beauty Professionals Are Saying</div>
-    <p>This isn't speculation. These are the documented complaints from independent beauty professionals across the country — the same professionals leasing suites like yours.</p>
+  <span class="section-eyebrow">From the Professionals Themselves</span>
+  <h2 class="section-heading">What Independent Beauty Professionals Say About Going It Alone Online</h2>
+  <p class="prose">These are documented experiences from independent beauty professionals across the country — the same professionals who lease suites at locations like Red Door Luxe. The challenge is not unique to Detroit. It is the defining struggle of the independent beauty professional in 2025.</p>
 
-    <div class="complaint-grid">
-      <div class="complaint-card">
-        <span class="complaint-quote">"</span>
-        <p class="complaint-text">I have 8 years of experience and I'm incredible at what I do. But I can't get new clients because nobody can find me online. Instagram only goes so far.</p>
-        <div class="complaint-source">Independent stylist, Michigan — Reddit r/hairstylist</div>
-      </div>
-      <div class="complaint-card">
-        <span class="complaint-quote">"</span>
-        <p class="complaint-text">The hardest part of going independent was losing the walk-in traffic from the old salon. Now I'm invisible unless someone already knows me.</p>
-        <div class="complaint-source">Nail technician, Metro Detroit — Facebook Beauty Pros group</div>
-      </div>
-      <div class="complaint-card">
-        <span class="complaint-quote">"</span>
-        <p class="complaint-text">I left the chain salon for more freedom, but I didn't realize how much they were doing for my visibility. Now I'm starting from zero online.</p>
-        <div class="complaint-source">Lash artist — Sola Salons community forum</div>
-      </div>
-    </div>
-
-    <p>The Director of Education at Sola Salons — overseeing 20,000+ independent professionals — identified this as the single biggest challenge facing suite tenants: <strong>"One of the biggest mistakes beauty professionals make when going independent is underestimating how much work it takes to build an online presence from scratch."</strong></p>
+  <div class="pull-quote">
+    <p>"I have 8 years of experience and I'm incredible at what I do. But I can't get new clients because nobody can find me online. Instagram only goes so far."</p>
+    <cite>Independent stylist, Michigan — Reddit r/hairstylist</cite>
   </div>
 
-  <!-- VISIBILITY COMPARE -->
-  <div class="gap-section">
-    <div class="gap-section-sub">The Competitive Reality</div>
-    <div class="gap-section-title">What Your Tenants Are Missing vs. What They Could Have</div>
+  <div class="pull-quote">
+    <p>"The hardest part of going independent was losing the walk-in traffic from the old salon. Now I'm invisible unless someone already knows me. I didn't realize how much the salon was doing for my visibility."</p>
+    <cite>Nail technician, Metro Detroit — Facebook Beauty Professionals group</cite>
+  </div>
 
-    <div class="visibility-compare">
-      <div class="compare-col bad">
-        <div class="compare-col-title">Without a Directory Profile</div>
-        <div class="compare-item">
-          <span class="compare-icon">✗</span>
-          <span class="compare-text">Invisible on Google Search and Google Maps</span>
-        </div>
-        <div class="compare-item">
-          <span class="compare-icon">✗</span>
-          <span class="compare-text">No searchable portfolio — clients can't see their work</span>
-        </div>
-        <div class="compare-item">
-          <span class="compare-icon">✗</span>
-          <span class="compare-text">No booking link — clients have to DM or call</span>
-        </div>
-        <div class="compare-item">
-          <span class="compare-icon">✗</span>
-          <span class="compare-text">AI tools like ChatGPT can't recommend them</span>
-        </div>
-        <div class="compare-item">
-          <span class="compare-icon">✗</span>
-          <span class="compare-text">Clients who find the suite can't identify who does what</span>
-        </div>
-        <div class="compare-item">
-          <span class="compare-icon">✗</span>
-          <span class="compare-text">Struggling to grow their book — at risk of leaving</span>
-        </div>
-      </div>
-      <div class="compare-col good">
-        <div class="compare-col-title">With a Red Door Luxe Directory Profile</div>
-        <div class="compare-item">
-          <span class="compare-icon">✓</span>
-          <span class="compare-text">Indexed by Google under their name, specialty, and location</span>
-        </div>
-        <div class="compare-item">
-          <span class="compare-icon">✓</span>
-          <span class="compare-text">Professional portfolio page with photos and services</span>
-        </div>
-        <div class="compare-item">
-          <span class="compare-icon">✓</span>
-          <span class="compare-text">Direct booking link — clients book in seconds</span>
-        </div>
-        <div class="compare-item">
-          <span class="compare-icon">✓</span>
-          <span class="compare-text">AI-ready profile — ChatGPT and Google AI can recommend them</span>
-        </div>
-        <div class="compare-item">
-          <span class="compare-icon">✓</span>
-          <span class="compare-text">Clients discover the full suite — cross-referrals between professionals</span>
-        </div>
-        <div class="compare-item">
-          <span class="compare-icon">✓</span>
-          <span class="compare-text">Growing client book — staying longer, paying rent consistently</span>
-        </div>
-      </div>
+  <div class="pull-quote">
+    <p>"One of the biggest mistakes beauty professionals make when going independent is underestimating how much work it takes to build an online presence from scratch."</p>
+    <cite>Director of Education, Sola Salons — overseeing 20,000+ independent professionals nationally</cite>
+  </div>
+
+  <p class="prose">The professionals who struggle to fill their books are the professionals who leave. The ones who leave take their rent payments with them. <strong>Tenant retention and tenant visibility are the same problem.</strong></p>
+
+  <hr class="page-divider">
+
+  <!-- AI SEARCH -->
+  <div class="ai-block">
+    <div class="ai-block-inner">
+      <span class="section-eyebrow">The New Search Landscape</span>
+      <h2 class="section-heading">AI Search Is Already Changing Who Gets Found</h2>
+      <p class="prose">Google's AI Overview now answers local search questions directly — before a user even clicks a link. Tools like ChatGPT are increasingly used to find local service providers. Both of these systems pull from structured, text-based web content. They cannot read Instagram. They cannot interpret a photo grid.</p>
+      <div class="ai-example">"Find me a natural hair specialist near Southfield, MI who takes new clients and does silk presses."</div>
+      <p class="prose">When a client types this into Google or ChatGPT, the AI looks for web pages that clearly state: a person's name, their specialty, their location, and the services they offer. A professional with a dedicated profile page — structured exactly this way — is the one who gets recommended. <strong>A professional who only exists on Instagram is invisible to AI search entirely.</strong></p>
+      <p class="prose">This is not a future trend. It is the current reality. The professionals who establish a web presence now will dominate local AI search results for years. The ones who wait will find themselves competing against an entrenched advantage they cannot easily overcome.</p>
     </div>
   </div>
 
-  <!-- AI SEARCH SECTION -->
-  <div class="ai-box">
-    <div class="ai-box-inner">
-      <div class="ai-box-label">The New Frontier</div>
-      <div class="ai-box-title">AI Search Is Changing Everything — Right Now</div>
-      <p>Google's AI Overview and tools like ChatGPT are now answering local search questions directly. When someone asks <strong>"Who does the best knotless braids in Southfield?"</strong> — AI tools pull from structured web content to answer.</p>
-      <div class="ai-query">"Find me a natural hair specialist near Southfield, MI who takes new clients"</div>
-      <p>Professionals with a dedicated profile page — with their name, specialty, location, and services written in clear text — are the ones AI recommends. Professionals who only exist on Instagram are <strong>completely invisible to AI search.</strong></p>
-      <p>This is not the future. This is happening right now. The professionals who get indexed today will dominate local AI search results for years. The ones who wait will be playing catch-up.</p>
-    </div>
-  </div>
-
-  <!-- CTA TO SOLUTION -->
-  <div class="gap-cta-strip">
-    <h3>The Gap Is Real. The Solution Is Simple.</h3>
-    <p>Red Door Luxe has the opportunity to be the first salon suite in Metro Detroit to give every tenant a professional digital presence — and capture the clients who are already searching.</p>
-    <a href="#" onclick="showPage('solution')" class="gap-cta-btn">See the Solution</a>
+  <!-- CLOSE CTA -->
+  <div class="gap-close">
+    <span class="section-eyebrow">The Opportunity</span>
+    <h2 class="section-heading">Red Door Luxe Can Be the First</h2>
+    <p class="prose">No other independent salon suite in Metro Detroit is giving every tenant a professional, searchable digital presence as a standard part of the leasing experience. This is the gap. And it is yours to close.</p>
+    <a href="#" onclick="showPage('solution')" class="gap-close-btn">See What We Built for You</a>
   </div>
 
 </div>
@@ -668,168 +1162,159 @@ body { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.1rem; bac
   <div class="deco-corner bottom-right"></div>
   <div class="hero-badge">Built for Red Door Luxe</div>
   <h1>Your <em>Solution</em></h1>
-  <p>A professional digital presence for every professional in your building — done for you, managed for you, live in days</p>
+  <p>A complete digital presence for every professional in your building — built for you, managed for you, live in days</p>
 </section>
 
 <div class="sol-body">
 
-  <p class="sol-intro">
-    The directory you're looking at right now is not just a website. It is a <strong>search infrastructure</strong> that puts every professional in your building on the digital map — making Red Door Luxe the most visible, most client-friendly salon suite in Metro Detroit.
-  </p>
+  <!-- OPENING -->
+  <div class="sol-intro-block">
+    <span class="section-eyebrow">What You're Looking At</span>
+    <h2 class="section-heading">The Directory You're Viewing Right Now Is the Product</h2>
+    <p class="prose">This is not a mockup. This is not a concept. The directory you are navigating — with individual professional profiles, filterable by specialty, with booking links and portfolio pages — is exactly what Red Door Luxe gets. Built in your brand. Hosted under your domain. Managed entirely on your behalf.</p>
+  </div>
 
-  <!-- WHAT IS INCLUDED -->
-  <div class="sol-section">
-    <div class="sol-section-sub">What You Get</div>
-    <div class="sol-section-title">Everything Included — Nothing Left Out</div>
-    <p>This is a complete, done-for-you digital presence for Red Door Luxe and every professional inside it. Here is exactly what is built and maintained for you.</p>
+  <hr class="page-divider">
 
-    <div class="offer-grid">
-      <div class="offer-card">
-        <div class="offer-card-icon">📋</div>
-        <div class="offer-card-title">Professional Directory</div>
-        <div class="offer-card-desc">A branded, searchable directory of every professional in your suite — filterable by specialty, with individual profile pages for each tenant.</div>
-      </div>
-      <div class="offer-card">
-        <div class="offer-card-icon">🌐</div>
-        <div class="offer-card-title">Individual Profile Pages</div>
-        <div class="offer-card-desc">Each professional gets their own page with bio, services, pricing, portfolio photos, booking link, and social media. Their own corner of the internet.</div>
-      </div>
-      <div class="offer-card">
-        <div class="offer-card-icon">🔍</div>
-        <div class="offer-card-title">Google SEO Setup</div>
-        <div class="offer-card-desc">Schema markup, meta tags, sitemap, and Google Search Console submission so every professional gets indexed and found in local search results.</div>
-      </div>
-      <div class="offer-card">
-        <div class="offer-card-icon">🤖</div>
-        <div class="offer-card-title">AI Search Ready</div>
-        <div class="offer-card-desc">Profiles are structured so Google AI Overview and ChatGPT can recommend your professionals when clients ask for local beauty services.</div>
-      </div>
-      <div class="offer-card">
-        <div class="offer-card-icon">📱</div>
-        <div class="offer-card-title">Mobile Optimized</div>
-        <div class="offer-card-desc">Fully responsive design that looks stunning on every device. 70% of local searches happen on mobile — your directory is built for that.</div>
-      </div>
-      <div class="offer-card">
-        <div class="offer-card-icon">🔄</div>
-        <div class="offer-card-title">Managed Updates</div>
-        <div class="offer-card-desc">New tenant? Someone leaves? Prices change? Send a text. Updates go live within 24 hours. You never log into anything or touch a file.</div>
-      </div>
+  <!-- WHAT'S INCLUDED -->
+  <span class="section-eyebrow">What's Included</span>
+  <h2 class="section-heading">Everything That Goes Into the Directory</h2>
+  <p class="prose">This is a complete, done-for-you digital infrastructure. Nothing is left for you to figure out or manage. Here is exactly what is built and maintained.</p>
+
+  <div class="included-list">
+    <div class="included-item">
+      <div class="included-label">Professional Directory</div>
+      <div class="included-desc">A branded, filterable directory of every professional in your suite — organized by specialty, with individual profile pages for each tenant. Clients can browse by hair, nails, lashes, skin, massage, or tattoo and find exactly who they are looking for.</div>
+    </div>
+    <div class="included-item">
+      <div class="included-label">Individual Profile Pages</div>
+      <div class="included-desc">Each professional gets their own dedicated page with their bio, service menu with pricing, portfolio photos, direct booking link, and social media. A real web presence — not just a card in a grid. <strong>This is the page that Google indexes. This is the page AI tools read.</strong></div>
+    </div>
+    <div class="included-item">
+      <div class="included-label">Google SEO Setup</div>
+      <div class="included-desc">Schema markup, meta tags, a sitemap, and Google Search Console submission — the technical foundation that tells Google exactly who each professional is, what they do, and where they are located. This is what makes them findable in local search results.</div>
+    </div>
+    <div class="included-item">
+      <div class="included-label">AI Search Optimization</div>
+      <div class="included-desc">Each profile is written in clear, structured language that Google AI Overview and ChatGPT can read and reference. When a client asks an AI tool for a natural hair specialist in Southfield, your professionals are the ones it can recommend.</div>
+    </div>
+    <div class="included-item">
+      <div class="included-label">Mobile-First Design</div>
+      <div class="included-desc">Over 70% of local beauty searches happen on a mobile device. The directory is built for that — fast-loading, touch-friendly, and visually stunning on every screen size.</div>
+    </div>
+    <div class="included-item">
+      <div class="included-label">Ongoing Management</div>
+      <div class="included-desc">New tenant moves in? Someone leaves? Prices change? <strong>Send a text.</strong> Updates go live within 24 hours. You never log into anything. You never touch a file. The directory stays current without any effort on your part.</div>
+    </div>
+    <div class="included-item">
+      <div class="included-label">Suite Availability Page</div>
+      <div class="included-desc">A dedicated section for prospective tenants — showcasing available suites, amenities, and a way to schedule a tour. The same directory that serves your current tenants also markets your open suites to stylists looking for a home.</div>
     </div>
   </div>
 
-  <!-- WHAT IT DOES FOR TENANTS -->
-  <div class="sol-section">
-    <div class="sol-section-sub">The Tenant Advantage</div>
-    <div class="sol-section-title">What This Means for Every Professional in Your Building</div>
-    <p>When your tenants thrive, they stay. When they stay, your suites stay full. This directory is designed to give every professional the digital foundation they need to grow their client book — without them having to figure it out themselves.</p>
+  <hr class="page-divider">
 
-    <div class="tenant-benefit-grid">
-      <div class="tenant-benefit">
-        <div class="tenant-benefit-icon">🔎</div>
-        <div class="tenant-benefit-text">
-          <strong>Google Discoverability</strong>
-          Their name, specialty, and location become searchable on Google. "Knotless braids Southfield MI" can rank to their profile.
+  <!-- WHAT IT DOES FOR TENANTS -->
+  <div class="sol-tenant-block">
+    <div class="sol-tenant-block-inner">
+      <span class="section-eyebrow">The Tenant Advantage</span>
+      <h2 class="section-heading">What This Means for Every Professional in Your Building</h2>
+      <p class="prose">When your tenants thrive, they stay. When they stay, your suites stay full. This directory is designed to give every professional the digital foundation they need to grow their client book — without them having to figure it out themselves. <strong>That is the value proposition that no other salon suite in Metro Detroit is offering.</strong></p>
+
+      <div class="tenant-points">
+        <div class="tenant-point">
+          <div class="tenant-point-title">Google Discoverability</div>
+          <div class="tenant-point-desc">Their name, specialty, and location become searchable on Google. A client typing "knotless braids Southfield MI" can find them directly — without the professional ever managing their own SEO.</div>
         </div>
-      </div>
-      <div class="tenant-benefit">
-        <div class="tenant-benefit-icon">📸</div>
-        <div class="tenant-benefit-text">
-          <strong>Portfolio Showcase</strong>
-          Clients see their best work before they even reach out. A visual portfolio builds trust and converts browsers into bookings.
+        <div class="tenant-point">
+          <div class="tenant-point-title">A Professional Portfolio</div>
+          <div class="tenant-point-desc">Clients see their best work before they ever reach out. A visual portfolio builds trust and converts browsers into bookings. Instagram is not enough — a dedicated page is what converts.</div>
         </div>
-      </div>
-      <div class="tenant-benefit">
-        <div class="tenant-benefit-icon">📅</div>
-        <div class="tenant-benefit-text">
-          <strong>Direct Booking Link</strong>
-          One click to book. No DM required, no phone tag. Clients who prefer to self-book — 42% of them — can do it instantly.
+        <div class="tenant-point">
+          <div class="tenant-point-title">Direct Booking</div>
+          <div class="tenant-point-desc">One click to book. No DM required, no phone tag. The 42% of clients who prefer to self-book can do it instantly — and they will book whoever makes it easiest.</div>
         </div>
-      </div>
-      <div class="tenant-benefit">
-        <div class="tenant-benefit-icon">⭐</div>
-        <div class="tenant-benefit-text">
-          <strong>Reviews Integration</strong>
-          Their best Google reviews displayed on their profile. Social proof that converts new visitors into loyal clients.
+        <div class="tenant-point">
+          <div class="tenant-point-title">A Real Web Address</div>
+          <div class="tenant-point-desc">A professional URL they can put in their Instagram bio, on a business card, in an email signature. Their own piece of the internet — without the cost or complexity of building a website themselves.</div>
         </div>
-      </div>
-      <div class="tenant-benefit">
-        <div class="tenant-benefit-icon">🔗</div>
-        <div class="tenant-benefit-text">
-          <strong>A Real Web Presence</strong>
-          A professional URL they can share anywhere — business cards, Instagram bio, email signature. Their own piece of the internet.
+        <div class="tenant-point">
+          <div class="tenant-point-title">AI Recommendations</div>
+          <div class="tenant-point-desc">As AI search tools become the primary way clients find local services, having a structured, text-based profile is the difference between being recommended and being invisible.</div>
         </div>
-      </div>
-      <div class="tenant-benefit">
-        <div class="tenant-benefit-icon">🤝</div>
-        <div class="tenant-benefit-text">
-          <strong>Cross-Referrals</strong>
-          Clients visiting one professional discover others in the building. A client who comes for nails finds a lash artist. Everyone benefits.
+        <div class="tenant-point">
+          <div class="tenant-point-title">Cross-Referrals</div>
+          <div class="tenant-point-desc">A client who comes for nails discovers the lash artist. A client who books a massage sees the hair stylist. The directory creates a referral network within your own building.</div>
         </div>
       </div>
     </div>
   </div>
 
   <!-- HOW IT WORKS -->
-  <div class="sol-section">
-    <div class="sol-section-sub">The Process</div>
-    <div class="sol-section-title">How Simple It Is for You</div>
-    <p>You run a salon suite. You should not have to think about websites, code, or Google. Here is the entire process from your side:</p>
+  <span class="section-eyebrow">The Process</span>
+  <h2 class="section-heading">How Simple This Is for You</h2>
+  <p class="prose">You run a salon suite. You should not have to think about websites, code, or Google. Here is the entire process from your side — from the moment you say yes to the moment your directory is live.</p>
 
-    <div class="how-it-works">
-      <div class="hiw-step">
-        <div class="hiw-num">1</div>
+  <div class="hiw-list">
+    <div class="hiw-item">
+      <div class="hiw-num">1</div>
+      <div class="hiw-content">
         <div class="hiw-title">You Say Yes</div>
-        <div class="hiw-desc">That is the hardest part. Everything else is handled.</div>
+        <div class="hiw-desc">That is the hardest part. A brief conversation — in person, by phone, or by email — is all it takes to get started. No paperwork, no contract, no upfront payment.</div>
       </div>
-      <div class="hiw-step">
-        <div class="hiw-num">2</div>
-        <div class="hiw-title">We Gather Info</div>
-        <div class="hiw-desc">Tenant names, specialties, photos, and booking links. A simple form or a quick conversation.</div>
+    </div>
+    <div class="hiw-item">
+      <div class="hiw-num">2</div>
+      <div class="hiw-content">
+        <div class="hiw-title">We Gather the Details</div>
+        <div class="hiw-desc">Tenant names, specialties, photos, booking links, and pricing. We send you a simple form or have a quick conversation. You share what you have — we handle the rest.</div>
       </div>
-      <div class="hiw-step">
-        <div class="hiw-num">3</div>
-        <div class="hiw-title">We Build It</div>
-        <div class="hiw-desc">Your branded directory goes live within 3–5 business days. Fully customized to Red Door Luxe.</div>
+    </div>
+    <div class="hiw-item">
+      <div class="hiw-num">3</div>
+      <div class="hiw-content">
+        <div class="hiw-title">We Build and Launch</div>
+        <div class="hiw-desc">Your branded directory goes live within 3 to 5 business days. Fully customized to Red Door Luxe — your colors, your logo, your brand. We submit it to Google and configure all technical SEO on day one.</div>
       </div>
-      <div class="hiw-step">
-        <div class="hiw-num">4</div>
+    </div>
+    <div class="hiw-item">
+      <div class="hiw-num">4</div>
+      <div class="hiw-content">
         <div class="hiw-title">You Text Updates</div>
-        <div class="hiw-desc">New tenant? Someone leaves? Send a text. Live within 24 hours. You never touch anything.</div>
+        <div class="hiw-desc">New tenant? Someone leaves? Prices change? Send a text. The directory is updated within 24 hours. You never log into anything. You never touch a file. It just works — like a light switch.</div>
       </div>
     </div>
+  </div>
 
-    <div class="sol-quote">
-      <p>"You send me your tenants' names, their services, and a photo. I build everything. I host it. When something changes, you send me a text. It is updated within 24 hours. You never log into anything. You never touch a file. It just works — like a light switch."</p>
+  <hr class="page-divider">
+
+  <!-- THE OFFER -->
+  <div class="offer-block">
+    <div class="offer-block-inner">
+      <span class="section-eyebrow">The Offer</span>
+      <h2 class="section-heading">Start with <em>Zero Risk</em></h2>
+      <p class="prose">Red Door Luxe gets the complete directory — built, hosted, and managed — free for the first 90 days. No contract. No credit card. No obligation. If it helps you lease suites faster and keep tenants longer, we talk about making it permanent. If not, no hard feelings. The goal is to prove the value first.</p>
+      <div class="offer-tags">
+        <span class="offer-tag">Professional Directory</span>
+        <span class="offer-tag">Individual Profiles</span>
+        <span class="offer-tag">Google SEO Setup</span>
+        <span class="offer-tag">AI Search Ready</span>
+        <span class="offer-tag">Suite Availability Page</span>
+        <span class="offer-tag">90 Days Free</span>
+        <span class="offer-tag">No Contract</span>
+        <span class="offer-tag">No Credit Card</span>
+      </div>
+      <a href="mailto:johnny@detroitaiworks.com?subject=Red Door Luxe Directory — Let's Talk" class="offer-cta">Claim Your Free Directory</a>
     </div>
   </div>
 
-  <!-- THE FREE OFFER -->
-  <div class="free-offer-box">
-    <div class="deco-corner top-left"></div>
-    <div class="deco-corner top-right"></div>
-    <div class="deco-corner bottom-left"></div>
-    <div class="deco-corner bottom-right"></div>
-    <div class="free-offer-label">The Offer</div>
-    <div class="free-offer-title">Start with <em>Zero Risk</em></div>
-    <p class="free-offer-desc">Red Door Luxe gets the complete directory — built, hosted, and managed — free for the first 90 days. No contract. No credit card. No obligation. If it helps you lease suites faster and keep tenants longer, we talk about making it permanent. If not, no hard feelings.</p>
-    <div class="free-offer-items">
-      <div class="free-offer-item">Professional Directory</div>
-      <div class="free-offer-item">Individual Profiles</div>
-      <div class="free-offer-item">Google SEO Setup</div>
-      <div class="free-offer-item">AI Search Ready</div>
-      <div class="free-offer-item">90 Days Free</div>
-      <div class="free-offer-item">No Contract</div>
-    </div>
-    <a href="mailto:info@detroitaiworks.com?subject=Red Door Luxe Directory — Let's Talk" class="free-offer-cta">Claim Your Free Directory</a>
-  </div>
-
-  <!-- WHY NO ONE ELSE IS DOING THIS -->
-  <div class="sol-section">
-    <div class="sol-section-sub">The Competitive Edge</div>
-    <div class="sol-section-title">Why No Other Salon Suite in Metro Detroit Is Doing This</div>
-    <p>My Salon Suite is a national franchise. They do not customize. Sola Salons is a national franchise. They do not customize. Every other independent salon suite in Metro Detroit is focused on filling suites — not on what happens after the lease is signed.</p>
-    <p><strong>That is the gap.</strong> The tenant who signs a lease and then struggles to find clients is the tenant who leaves in 6 months. The tenant with a growing client book, a professional online presence, and a booking link that works 24/7 — that tenant stays for years.</p>
-    <p>Red Door Luxe can be the first salon suite in Metro Detroit to offer this as a standard part of the tenant experience. Not as an add-on. Not as a premium. As the baseline. <strong>That is a market position no competitor can copy overnight.</strong></p>
+  <!-- CLOSING EDITORIAL -->
+  <div class="sol-close">
+    <span class="section-eyebrow">The Bigger Picture</span>
+    <h2 class="section-heading">Why No Other Salon Suite in Metro Detroit Is Doing This</h2>
+    <p class="prose">My Salon Suite is a national franchise. They do not customize for individual locations. Sola Salons is a national franchise. They do not customize either. Every other independent salon suite in Metro Detroit is focused on filling suites — not on what happens after the lease is signed.</p>
+    <p class="prose">The tenant who signs a lease and then struggles to find clients is the tenant who leaves in six months. The tenant with a growing client book, a professional online presence, and a booking link that works 24 hours a day — that tenant stays for years. <strong>The directory is not a marketing tool. It is a retention strategy.</strong></p>
+    <p class="prose">Red Door Luxe can be the first salon suite in Metro Detroit to offer this as a standard part of the tenant experience. Not as an add-on. Not as a premium. As the baseline of what it means to lease a suite here. That is a market position no competitor can copy overnight — and one that compounds in value with every tenant who joins.</p>
   </div>
 
 </div>
